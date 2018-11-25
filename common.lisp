@@ -157,8 +157,9 @@
      (gethash header-name (headers-of some-request)) 
      header-value)))
 
-(defun url-encode (a-string)
+(defun url-encode (a-string &optional external-format)
   "URL encode a string"
+  (declare (ignore external-format))
   (flet ((unreserved-p (c)
            (find c 
 		 "ABCDEFGHIJKLMNOPQRTSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_.~" 
